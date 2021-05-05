@@ -1,9 +1,6 @@
-ARG GOOGLE_CLOUD_SDK_IMAGE_TAG=339.0.0-alpine
+ARG GOOGLE_CLOUD_SDK_IMAGE_TAG=339.0.0-emulators
 
 FROM google/cloud-sdk:$GOOGLE_CLOUD_SDK_IMAGE_TAG
-RUN apk --no-cache add openjdk11-jre-headless
-RUN gcloud --quiet components install beta pubsub-emulator
-
 ADD run.sh /opt/emulators/pubsub/run.sh
 
 # The data directory to be used for the emulator run
