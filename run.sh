@@ -5,6 +5,6 @@ if [ -n "${PUBSUB_PROJECT_ID}" ]; then
 fi
 
 gcloud beta emulators pubsub start \
-	--data-dir=/data
+	--data-dir=/data \
 	--host-port=0.0.0.0:8085
 
